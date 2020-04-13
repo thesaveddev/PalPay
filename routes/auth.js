@@ -5,13 +5,18 @@ const express = require('express');
 const app = express();
 
 //import middlewares
-const auth = require('../controllers/auth');
+const auth = require('../controllers/auth/auth');
 
+//show signin page
+app.get('/signin', auth.signinForm);
 
-//define login route
+//log users in
 app.post('/signin', auth.signIn);
 
-//define signup route
+//show signup page
+app.get('/signup', auth.signupForm);
+
+//signup user
 app.post('/signup', auth.signUp);
 
 

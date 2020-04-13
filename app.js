@@ -28,14 +28,14 @@ mongoose.connect('mongodb://localhost/palpay', {useUnifiedTopology:true, useNewU
 //define routes
 const indexRoute = require('./routes/index');
 const authRoute = require('./routes/auth');
-// const transactionsRoute = require('./routes/transactions');
-// const usersRoute = require('./routes/users');
+const transactionsRoute = require('./routes/transactions');
+const usersRoute = require('./routes/users');
 
 
 //use routes
 app.use(indexRoute);
 app.use(authRoute);
-// app.use(transactionsRoute);
-// app.use(usersRoute);
+app.use(transactionsRoute);
+app.use(usersRoute);
 app.listen(3000, () => console.log('Server Started On Port 3000'))
 module.exports = app;
